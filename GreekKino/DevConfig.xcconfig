@@ -1,0 +1,12 @@
+//
+//  DevConfig.xcconfig
+//  GreekKino
+//
+//  Created by Marko on 28.6.24..
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+BASE_URL = api.opap.gr/draws/v3.0/
+GAME_ID = 1100

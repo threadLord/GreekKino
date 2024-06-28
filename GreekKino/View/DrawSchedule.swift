@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  DrawSchedule.swift
 //  GreekKino
 //
 //  Created by Marko on 28.6.24..
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct DrawSchedule: View {
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -15,10 +15,9 @@ struct ContentView: View {
                 .foregroundStyle(.tint)
             Text("Hello, world!")
         }
-        .padding()
-    }
+        .padding()    }
 }
 
 #Preview {
-    ContentView()
+    DrawSchedule()
 }

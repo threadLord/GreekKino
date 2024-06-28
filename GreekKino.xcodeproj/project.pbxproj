@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		AD9C7D9F2C2EE3C3000A5A0E /* GreekKinoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C7D9E2C2EE3C3000A5A0E /* GreekKinoApp.swift */; };
-		AD9C7DA12C2EE3C3000A5A0E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C7DA02C2EE3C3000A5A0E /* ContentView.swift */; };
 		AD9C7DA32C2EE3C4000A5A0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD9C7DA22C2EE3C4000A5A0E /* Assets.xcassets */; };
 		AD9C7DA62C2EE3C4000A5A0E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD9C7DA52C2EE3C4000A5A0E /* Preview Assets.xcassets */; };
 		AD9C7DB02C2EE3C5000A5A0E /* GreekKinoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C7DAF2C2EE3C5000A5A0E /* GreekKinoTests.swift */; };
 		AD9C7DBA2C2EE3C5000A5A0E /* GreekKinoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C7DB92C2EE3C5000A5A0E /* GreekKinoUITests.swift */; };
 		AD9C7DBC2C2EE3C5000A5A0E /* GreekKinoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C7DBB2C2EE3C5000A5A0E /* GreekKinoUITestsLaunchTests.swift */; };
+		AD9C7DCC2C2EE61C000A5A0E /* DrawModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C7DCB2C2EE61C000A5A0E /* DrawModel.swift */; };
+		AD9C7DCF2C2EE70D000A5A0E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C7DCE2C2EE70D000A5A0E /* NetworkManager.swift */; };
+		AD9C7DD52C2EEB11000A5A0E /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C7DD42C2EEB11000A5A0E /* Configuration.swift */; };
+		AD9C7DD72C2EEB3E000A5A0E /* APIEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C7DD62C2EEB3D000A5A0E /* APIEndPoints.swift */; };
+		AD9C7DD92C2EF18C000A5A0E /* DrawSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C7DD82C2EF18C000A5A0E /* DrawSchedule.swift */; };
+		ADDF54AC2C2F4D7100F5FA8D /* RequestCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDF54AB2C2F4D7100F5FA8D /* RequestCreator.swift */; };
+		ADDF54AE2C2F4DB400F5FA8D /* DrawScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDF54AD2C2F4DB400F5FA8D /* DrawScheduleViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +42,6 @@
 /* Begin PBXFileReference section */
 		AD9C7D9B2C2EE3C3000A5A0E /* GreekKino.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreekKino.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD9C7D9E2C2EE3C3000A5A0E /* GreekKinoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreekKinoApp.swift; sourceTree = "<group>"; };
-		AD9C7DA02C2EE3C3000A5A0E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AD9C7DA22C2EE3C4000A5A0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD9C7DA52C2EE3C4000A5A0E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AD9C7DAB2C2EE3C5000A5A0E /* GreekKinoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GreekKinoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +49,16 @@
 		AD9C7DB52C2EE3C5000A5A0E /* GreekKinoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GreekKinoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD9C7DB92C2EE3C5000A5A0E /* GreekKinoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreekKinoUITests.swift; sourceTree = "<group>"; };
 		AD9C7DBB2C2EE3C5000A5A0E /* GreekKinoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreekKinoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AD9C7DCB2C2EE61C000A5A0E /* DrawModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawModel.swift; sourceTree = "<group>"; };
+		AD9C7DCE2C2EE70D000A5A0E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		AD9C7DD02C2EE91B000A5A0E /* DevConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DevConfig.xcconfig; sourceTree = "<group>"; };
+		AD9C7DD12C2EE9FA000A5A0E /* ProdConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ProdConfig.xcconfig; sourceTree = "<group>"; };
+		AD9C7DD22C2EEA51000A5A0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AD9C7DD42C2EEB11000A5A0E /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		AD9C7DD62C2EEB3D000A5A0E /* APIEndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndPoints.swift; sourceTree = "<group>"; };
+		AD9C7DD82C2EF18C000A5A0E /* DrawSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawSchedule.swift; sourceTree = "<group>"; };
+		ADDF54AB2C2F4D7100F5FA8D /* RequestCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCreator.swift; sourceTree = "<group>"; };
+		ADDF54AD2C2F4DB400F5FA8D /* DrawScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawScheduleViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +109,17 @@
 		AD9C7D9D2C2EE3C3000A5A0E /* GreekKino */ = {
 			isa = PBXGroup;
 			children = (
+				AD9C7DD32C2EEB02000A5A0E /* Utils */,
+				AD9C7DD22C2EEA51000A5A0E /* Info.plist */,
+				AD9C7DCD2C2EE6FE000A5A0E /* Network */,
+				AD9C7DCA2C2EE544000A5A0E /* Model */,
+				AD9C7DC92C2EE3F6000A5A0E /* ViewModel */,
+				AD9C7DC82C2EE3E8000A5A0E /* View */,
 				AD9C7D9E2C2EE3C3000A5A0E /* GreekKinoApp.swift */,
-				AD9C7DA02C2EE3C3000A5A0E /* ContentView.swift */,
 				AD9C7DA22C2EE3C4000A5A0E /* Assets.xcassets */,
 				AD9C7DA42C2EE3C4000A5A0E /* Preview Content */,
+				AD9C7DD02C2EE91B000A5A0E /* DevConfig.xcconfig */,
+				AD9C7DD12C2EE9FA000A5A0E /* ProdConfig.xcconfig */,
 			);
 			path = GreekKino;
 			sourceTree = "<group>";
@@ -125,6 +147,48 @@
 				AD9C7DBB2C2EE3C5000A5A0E /* GreekKinoUITestsLaunchTests.swift */,
 			);
 			path = GreekKinoUITests;
+			sourceTree = "<group>";
+		};
+		AD9C7DC82C2EE3E8000A5A0E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AD9C7DD82C2EF18C000A5A0E /* DrawSchedule.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AD9C7DC92C2EE3F6000A5A0E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ADDF54AD2C2F4DB400F5FA8D /* DrawScheduleViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AD9C7DCA2C2EE544000A5A0E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AD9C7DCB2C2EE61C000A5A0E /* DrawModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AD9C7DCD2C2EE6FE000A5A0E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				AD9C7DCE2C2EE70D000A5A0E /* NetworkManager.swift */,
+				AD9C7DD62C2EEB3D000A5A0E /* APIEndPoints.swift */,
+				ADDF54AB2C2F4D7100F5FA8D /* RequestCreator.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		AD9C7DD32C2EEB02000A5A0E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AD9C7DD42C2EEB11000A5A0E /* Configuration.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +321,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD9C7DA12C2EE3C3000A5A0E /* ContentView.swift in Sources */,
+				AD9C7DCF2C2EE70D000A5A0E /* NetworkManager.swift in Sources */,
+				ADDF54AC2C2F4D7100F5FA8D /* RequestCreator.swift in Sources */,
+				AD9C7DD52C2EEB11000A5A0E /* Configuration.swift in Sources */,
+				AD9C7DCC2C2EE61C000A5A0E /* DrawModel.swift in Sources */,
+				AD9C7DD92C2EF18C000A5A0E /* DrawSchedule.swift in Sources */,
+				ADDF54AE2C2F4DB400F5FA8D /* DrawScheduleViewModel.swift in Sources */,
+				AD9C7DD72C2EEB3E000A5A0E /* APIEndPoints.swift in Sources */,
 				AD9C7D9F2C2EE3C3000A5A0E /* GreekKinoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +367,7 @@
 /* Begin XCBuildConfiguration section */
 		AD9C7DBD2C2EE3C5000A5A0E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD9C7DD02C2EE91B000A5A0E /* DevConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -360,6 +431,7 @@
 		};
 		AD9C7DBE2C2EE3C5000A5A0E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD9C7DD12C2EE9FA000A5A0E /* ProdConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -425,6 +497,7 @@
 				DEVELOPMENT_TEAM = XRHBNP5PV5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GreekKino/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -454,6 +527,7 @@
 				DEVELOPMENT_TEAM = XRHBNP5PV5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GreekKino/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
