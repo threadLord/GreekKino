@@ -19,20 +19,20 @@ struct DrawScheduleView: View {
         
         HStack {
             Text("Vreme izvlačenja")
+                .foregroundStyle(.white)
             
             Spacer()
             
             Text("Preostalo vreme")
+                .foregroundStyle(.white)
         }
         .padding()
+        .padding(.horizontal, 8)
         
-        ScrollView(.vertical) {
-            VStack (spacing: 0){
-                ForEach(drawScheduleViewModel.drawScheduleData) { drawModel in
-                    DrawScheduleCell(draw: drawModel)
-                        .onTapGesture {
-                            coordinator.push(.play(model: drawModel))
-                        }
+        List {
+            ForEach(drawScheduleViewModel.drawScheduleData) { drawModel in
+                DrawScheduleCell(draw: drawModel) {
+                    coordinator.push(.play(model: drawModel))
                 }
             }
         }

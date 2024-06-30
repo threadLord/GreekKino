@@ -25,7 +25,6 @@ struct PlayHolderView: View {
             HStack{
                 ForEach(playHolderViewViewModel.allState) { state in
                     Button(action: {
-                        print("Talon")
                         playHolderViewViewModel.select(state: state)
                     }, label: {
                         Text(state.name)
@@ -37,6 +36,9 @@ struct PlayHolderView: View {
                     })
                 }
             }
+            
+            Divider()
+                .foregroundStyle(.white)
 
             ZStack {
                 DrawPlayView(draw: playHolderViewViewModel.drawModel)

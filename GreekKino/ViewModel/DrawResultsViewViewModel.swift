@@ -15,7 +15,7 @@ class DrawResultsViewViewModel: DrawScheduleViewModel {
     }
     
     func getDrawTime(time: Int) -> String {
-        var date: Date = Date(timeIntervalSince1970: TimeInterval(time/1000))
+        let date: Date = Date(timeIntervalSince1970: TimeInterval(time/1000))
         var calendar = Calendar.current
         calendar.timeZone = TimeZone.current
         let hour = calendar.component(.hour, from: date)

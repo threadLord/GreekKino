@@ -14,12 +14,9 @@ struct DrawPlayView: View {
     
     @StateObject
     var drawPlayViewModel: DrawPlayViewModel
-    
-    
-    
+        
     init(draw: DrawModel) {
         self._drawPlayViewModel = StateObject(wrappedValue: DrawPlayViewModel(draw: draw, networkManager: NetworkManager()))
-        
     }
     
     var body: some View {
@@ -30,33 +27,50 @@ struct DrawPlayView: View {
                 
                 HStack {
                     Text("Vreme: \(drawPlayViewModel.drawTime)")
-                    Text("| Kolo: \(drawPlayViewModel.draw.drawID)")
-                                        Spacer()
+                        .multilineTextAlignment(.leading)
+                    
+                    Spacer()
+                    
+                    Text("Kolo: \(drawPlayViewModel.draw.drawID)")
+                        .multilineTextAlignment(.center)
+                    
+                    Spacer()
+                    
                     Text(drawPlayViewModel.timeLeft)
-                    
-                    
+                        .multilineTextAlignment(.trailing)
                 }
-                .padding(8)
-              
+                .padding(.horizontal ,16)
+                .padding(.vertical, 8)
+                
                 
                 HStack {
                     VStack {
                         Text("B.K.")
+                            .multilineTextAlignment(.leading)
+                        
                         Text("Kvota")
-                            .padding(8)
+                            .multilineTextAlignment(.leading)
+                            .padding(.vertical, 8)
                     }
+                    
+                    Divider()
+                        .foregroundStyle(.white)
                     
                     ScrollViewReader(content: { proxy in
                         ScrollView(.horizontal) {
                             HStack {
-                                                               
+                                
                                 ForEach(drawPlayViewModel.odds) { odd in
                                     VStack {
                                         Text("\(odd.number)")
+                                        
+                                        
                                         Text("\(odd.formatedOdd)")
+                                            .foregroundStyle(.white)
                                             .padding(8)
                                             .background(
-                                                odd.isSelected ? Color.yellow.clipShape(Capsule()) : Color.black.clipShape(Capsule())
+                                                
+                                                odd.isSelected ? Color.purple.clipShape(Capsule()) : Color.black.clipShape(Capsule())
                                             )
                                     }
                                     .id(odd.id)
@@ -67,7 +81,12 @@ struct DrawPlayView: View {
                             }
                         }
                     })
-            }
+                }
+                .padding(.horizontal)
+                
+                Divider()
+                    .foregroundStyle(.white)
+                
                 Spacer()
                 
                 
@@ -80,15 +99,17 @@ struct DrawPlayView: View {
                             }, label: {
                                 Text("\(numberModel.number)")
                                     .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                    .foregroundStyle(.white)
                                     .background(
-                                        numberModel.isChoosen ? Color.yellow.clipShape(Circle()) : Color.black.clipShape(Circle())
+                                        numberModel.isChoosen ? Color.blue.clipShape(Circle()) : Color.black.clipShape(Circle())
                                     )
                             })
                             
                         }
                     }
                 }
-                            
+                .padding()
+                
                 Spacer()
             }
         })

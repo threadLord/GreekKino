@@ -15,15 +15,22 @@ struct DrawScheduleCell: View {
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
+    var action: () -> Void
+    
     var body: some View {
-        HStack {
-            Text(drawTime)
-                .padding()
-            
-            Spacer()
-            
-            Text(timeLeft)
-                .padding()
+        
+        Button(action: action) {
+            HStack {
+                Text(drawTime)
+                    .foregroundStyle(.white)
+                    .padding()
+                
+                Spacer()
+                
+                Text(timeLeft)
+                    .foregroundStyle(.white)
+                    .padding()
+            }
         }
         .onReceive(timer) { input in
             calculateTimeLeft(input: input)
