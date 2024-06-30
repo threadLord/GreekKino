@@ -21,14 +21,23 @@ struct DrawResultsView: View {
                         
                             VStack {
                                 HStack {
-                                    Text("Vreme: \(drawModel.drawTime)")
+                                    let drawTime = drawResultsViewViewModel.getDrawTime(time: drawModel.drawTime)
+                                    Text("Vreme: \(drawTime)")
                                     
                                     Text("| Kolo: \(drawModel.drawID)")
+                                    
+                                    Spacer()
                                     
                                 }
                                 
                                 ForEach(drawModel.winningNumbers, id: \.self) { number in
-                                    
+                                    HStack {
+                                        Text("\(number)")
+                                            .padding(EdgeInsets())
+                                            .background(
+                                                Color.yellow
+                                            )
+                                    }
                                 }
                         }
                 }

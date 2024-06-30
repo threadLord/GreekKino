@@ -18,7 +18,3 @@ struct DrawModel: Identifiable {
 //    let status: Status
 //    let drawBreak, visualDraw: Int
 }
-
-struct IdentifieableNumbers {
-    
-}
