@@ -11,7 +11,7 @@ class PlayHolderViewViewModel: ObservableObject {
     @Published
     var state: PlayState = .drawPlay
     
-    var allState: [PlayState] = [.drawPlay, .dradLive, .results]
+    var allState: [PlayState] = [.drawPlay, .dradLive, .drawResults]
     
     var drawModel: DrawModel
     

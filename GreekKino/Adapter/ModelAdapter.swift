@@ -14,8 +14,11 @@ protocol ModelAdapterProtocol {
 
 struct ModelAdapter: ModelAdapterProtocol {
     func draw(_ networkModel: DrawModelNetwork) -> DrawModel {
+        var winningNumbers = networkModel.winningNumbers?.list ?? []
+        let removedDuplicateNumbers = Set(winningNumbers.map { $0 })
+        winningNumbers = Array(removedDuplicateNumbers)
         
-        return DrawModel(gameID: networkModel.gameID, drawID: networkModel.drawID, drawTime: networkModel.drawTime)
+        return DrawModel(gameID: networkModel.gameID, drawID: networkModel.drawID, drawTime: networkModel.drawTime, winningNumbers: winningNumbers)
 //                         status: networkModel.status, drawBreak: networkModel.drawBreak, visualDraw: networkModel.visualDraw)
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 enum RequestCreator {
     case game(id: Int = APIEnpoints.gameId)
     case draw(gameId: Int, drawId: Int)
-    case last(gameID: Int, limit: Int)
+    case last(gameID: Int, limit: Int = APIEnpoints.resultsLimit)
     
     var request: URLRequest? {
         switch self {
@@ -26,7 +26,7 @@ enum RequestCreator {
         }
     }
     
-    func createRequest(url: String) -> URLRequest? {
+    private func createRequest(url: String) -> URLRequest? {
         guard let url = URL(string: url) else {
             return nil
         }

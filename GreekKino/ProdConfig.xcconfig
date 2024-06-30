@@ -11,3 +11,4 @@
 
 BASE_URL = api.opap.gr/draws/v3.0/
 GAME_ID = 1100
+RESULTS_LIMIT = 20

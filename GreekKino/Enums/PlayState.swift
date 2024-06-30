@@ -14,7 +14,7 @@ enum PlayState: Identifiable {
     
     case drawPlay
     case dradLive
-    case results
+    case drawResults
     
     var name: String {
         switch self {
@@ -22,7 +22,7 @@ enum PlayState: Identifiable {
             return "Talon"
         case .dradLive:
             return "Uzivo"
-        case .results:
+        case .drawResults:
             return "Rezultati"
         }
     }

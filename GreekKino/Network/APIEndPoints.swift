@@ -31,4 +31,13 @@ enum APIEnpoints {
             return -1
         }
     }
+    
+    static var resultsLimit: Int {
+        do {
+            let gameID: Int = try Configuration.value(for: "RESULTS_LIMIT")
+            return gameID
+        } catch {
+            return -1
+        }
+    }
 }

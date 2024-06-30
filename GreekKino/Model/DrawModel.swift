@@ -14,6 +14,11 @@ struct DrawModel: Identifiable {
     }
     
     let gameID, drawID, drawTime: Int
+    let winningNumbers: [Int]
 //    let status: Status
 //    let drawBreak, visualDraw: Int
+}
+
+struct IdentifieableNumbers {
+    
 }

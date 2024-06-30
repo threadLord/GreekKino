@@ -23,8 +23,8 @@ class DrawScheduleViewModel: ObservableObject {
         self.adapter = adapter
     }
     
-    func getdraws() {
-        guard let urlRequest = RequestCreator.game(id: 1100).request else {
+    func getdraws(requestCreator: RequestCreator = RequestCreator.game(id: 1100)) {
+        guard let urlRequest = requestCreator.request else {
             error = .requestFailed
             return
         }
