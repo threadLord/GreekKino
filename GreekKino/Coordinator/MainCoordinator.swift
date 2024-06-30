@@ -90,7 +90,7 @@ class MainCoordinator: ObservableObject {
         case .main:
             DrawScheduleView()
         case .play(let model):
-            DrawPlayView(draw: model)
+            PlayHolderView(draw: model)
         }
     }
     
