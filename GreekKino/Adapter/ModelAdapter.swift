@@ -19,6 +19,5 @@ struct ModelAdapter: ModelAdapterProtocol {
         winningNumbers = Array(removedDuplicateNumbers)
         
         return DrawModel(gameID: networkModel.gameID, drawID: networkModel.drawID, drawTime: networkModel.drawTime, winningNumbers: winningNumbers)
-//                         status: networkModel.status, drawBreak: networkModel.drawBreak, visualDraw: networkModel.visualDraw)
     }
 }

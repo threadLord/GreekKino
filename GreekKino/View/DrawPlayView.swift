@@ -42,7 +42,6 @@ struct DrawPlayView: View {
                 .padding(.horizontal ,16)
                 .padding(.vertical, 8)
                 
-                
                 HStack {
                     VStack {
                         Text("B.K.")
@@ -63,7 +62,6 @@ struct DrawPlayView: View {
                                 ForEach(drawPlayViewModel.odds) { odd in
                                     VStack {
                                         Text("\(odd.number)")
-                                        
                                         
                                         Text("\(odd.formatedOdd)")
                                             .foregroundStyle(.white)
@@ -104,7 +102,6 @@ struct DrawPlayView: View {
                                         numberModel.isChoosen ? Color.blue.clipShape(Circle()) : Color.black.clipShape(Circle())
                                     )
                             })
-                            
                         }
                     }
                 }

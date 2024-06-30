@@ -18,6 +18,6 @@ struct DrawLive: View {
     }
 }
 
-//#Preview {
-//    DrawLive()
-//}
+#Preview {
+    DrawLive()
+}

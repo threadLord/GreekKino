@@ -23,6 +23,11 @@
 		AD84B6532C31F5FE00BF056E /* DrawLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84B6522C31F5FE00BF056E /* DrawLive.swift */; };
 		AD84B6552C31FCDC00BF056E /* DrawResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84B6542C31FCDC00BF056E /* DrawResultsView.swift */; };
 		AD84B6572C31FD2300BF056E /* DrawResultsViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84B6562C31FD2300BF056E /* DrawResultsViewViewModel.swift */; };
+		AD84B6592C32208800BF056E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84B6582C32208800BF056E /* NetworkError.swift */; };
+		AD84B65B2C3220A400BF056E /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84B65A2C3220A400BF056E /* NetworkManagerProtocol.swift */; };
+		AD84B65E2C32210E00BF056E /* Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84B65D2C32210E00BF056E /* Sheet.swift */; };
+		AD84B6602C32212400BF056E /* FullScreenCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84B65F2C32212400BF056E /* FullScreenCover.swift */; };
+		AD84B6622C32213C00BF056E /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84B6612C32213C00BF056E /* Screen.swift */; };
 		AD9C7D9F2C2EE3C3000A5A0E /* GreekKinoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C7D9E2C2EE3C3000A5A0E /* GreekKinoApp.swift */; };
 		AD9C7DA32C2EE3C4000A5A0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD9C7DA22C2EE3C4000A5A0E /* Assets.xcassets */; };
 		AD9C7DA62C2EE3C4000A5A0E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD9C7DA52C2EE3C4000A5A0E /* Preview Assets.xcassets */; };
@@ -75,6 +80,11 @@
 		AD84B6522C31F5FE00BF056E /* DrawLive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawLive.swift; sourceTree = "<group>"; };
 		AD84B6542C31FCDC00BF056E /* DrawResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawResultsView.swift; sourceTree = "<group>"; };
 		AD84B6562C31FD2300BF056E /* DrawResultsViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawResultsViewViewModel.swift; sourceTree = "<group>"; };
+		AD84B6582C32208800BF056E /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		AD84B65A2C3220A400BF056E /* NetworkManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerProtocol.swift; sourceTree = "<group>"; };
+		AD84B65D2C32210E00BF056E /* Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sheet.swift; sourceTree = "<group>"; };
+		AD84B65F2C32212400BF056E /* FullScreenCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenCover.swift; sourceTree = "<group>"; };
+		AD84B6612C32213C00BF056E /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		AD9C7D9B2C2EE3C3000A5A0E /* GreekKino.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreekKino.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD9C7D9E2C2EE3C3000A5A0E /* GreekKinoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreekKinoApp.swift; sourceTree = "<group>"; };
 		AD9C7DA22C2EE3C4000A5A0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -135,9 +145,21 @@
 		AD84B64B2C31F05A00BF056E /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				AD84B65C2C3220F500BF056E /* CoordinatorEnums */,
 				AD84B64C2C31F06900BF056E /* PlayState.swift */,
+				AD84B6582C32208800BF056E /* NetworkError.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		AD84B65C2C3220F500BF056E /* CoordinatorEnums */ = {
+			isa = PBXGroup;
+			children = (
+				AD84B65D2C32210E00BF056E /* Sheet.swift */,
+				AD84B65F2C32212400BF056E /* FullScreenCover.swift */,
+				AD84B6612C32213C00BF056E /* Screen.swift */,
+			);
+			path = CoordinatorEnums;
 			sourceTree = "<group>";
 		};
 		AD9C7D922C2EE3C2000A5A0E = {
@@ -252,6 +274,7 @@
 				AD9C7DCE2C2EE70D000A5A0E /* NetworkManager.swift */,
 				AD9C7DD62C2EEB3D000A5A0E /* APIEndPoints.swift */,
 				ADDF54AB2C2F4D7100F5FA8D /* RequestCreator.swift */,
+				AD84B65A2C3220A400BF056E /* NetworkManagerProtocol.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -411,22 +434,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD9C7DCF2C2EE70D000A5A0E /* NetworkManager.swift in Sources */,
+				AD84B6592C32208800BF056E /* NetworkError.swift in Sources */,
 				AD84B63C2C319ADE00BF056E /* MainCoordinatorView.swift in Sources */,
 				ADDF54AC2C2F4D7100F5FA8D /* RequestCreator.swift in Sources */,
 				AD84B6552C31FCDC00BF056E /* DrawResultsView.swift in Sources */,
 				ADDF54B62C2F5E9000F5FA8D /* ModelAdapter.swift in Sources */,
 				ADDF54B12C2F58A300F5FA8D /* DrawScheduleCell.swift in Sources */,
+				AD84B6622C32213C00BF056E /* Screen.swift in Sources */,
 				AD84B6442C31D40900BF056E /* Odd.swift in Sources */,
 				AD9C7DD52C2EEB11000A5A0E /* Configuration.swift in Sources */,
 				AD9C7DCC2C2EE61C000A5A0E /* DrawModelNetwork.swift in Sources */,
+				AD84B65B2C3220A400BF056E /* NetworkManagerProtocol.swift in Sources */,
 				AD84B63A2C318B4C00BF056E /* MainCoordinator.swift in Sources */,
 				AD84B6512C31F5DB00BF056E /* WebView.swift in Sources */,
 				AD84B64A2C31EA0700BF056E /* PlayHolderView.swift in Sources */,
 				AD84B63E2C31AD4A00BF056E /* PlayedDrawModel.swift in Sources */,
+				AD84B65E2C32210E00BF056E /* Sheet.swift in Sources */,
 				ADDF54B32C2F5E0E00F5FA8D /* DrawModel.swift in Sources */,
 				AD9C7DD92C2EF18C000A5A0E /* DrawScheduleView.swift in Sources */,
 				ADDF54AE2C2F4DB400F5FA8D /* DrawScheduleViewModel.swift in Sources */,
 				AD84B6352C31816000BF056E /* DrawPlayView.swift in Sources */,
+				AD84B6602C32212400BF056E /* FullScreenCover.swift in Sources */,
 				AD84B6402C31AEFF00BF056E /* NumberModel.swift in Sources */,
 				AD84B6482C31D45E00BF056E /* NumbersRow.swift in Sources */,
 				AD9C7DD72C2EEB3E000A5A0E /* APIEndPoints.swift in Sources */,

@@ -59,6 +59,6 @@ struct DrawResultsView: View {
     }
 }
 
-//#Preview {
-//    DrawResultsView()
-//}
+#Preview {
+    DrawResultsView()
+}
