@@ -14,7 +14,9 @@ enum RequestCreator {
     var request: URLRequest? {
         switch self {
         case .game(let id):
-            guard let url = URL(string: APIEnpoints.baseURLString + String(id)) else {
+            let urlString: String = APIEnpoints.baseURLString + String(id) + "/upcoming/20"
+            
+            guard let url = URL(string: urlString) else {
                 return nil
             }
             return URLRequest(url: url)
