@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 enum APIEnpoints {
     static var baseURL: URL {
         return try! URL(string: "https://" + Configuration.value(for: "BASE_URL"))!

@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct DrawModel: Identifiable {
     var id: Int {
         return drawTime
@@ -15,6 +14,4 @@ struct DrawModel: Identifiable {
     
     let gameID, drawID, drawTime: Int
     let winningNumbers: [Int]
-//    let status: Status
-//    let drawBreak, visualDraw: Int
 }

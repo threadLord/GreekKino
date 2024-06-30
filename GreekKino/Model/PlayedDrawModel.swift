@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct PlayedDrawModel {
     var drawModel: DrawModel
     var numbers: [Int]

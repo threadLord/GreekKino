@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct PlayHolderView: View {
     
     @EnvironmentObject
@@ -56,6 +55,6 @@ struct PlayHolderView: View {
     }
 }
 
-//#Preview {
-//    PlayHolderView()
-//}
+#Preview {
+    PlayHolderView(draw: DrawModel(gameID: 1100, drawID: 1099300204, drawTime: 1111111000003, winningNumbers: []))
+}

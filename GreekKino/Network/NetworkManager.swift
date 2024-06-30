@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct NetworkManager: NetworkManagerProtocol {
     
     var session: URLSession

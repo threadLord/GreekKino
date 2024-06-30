@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 
-
 class MainCoordinator: ObservableObject {
     
     @Published var path = NavigationPath()

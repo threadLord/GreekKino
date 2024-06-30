@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 class DrawResultsViewViewModel: DrawScheduleViewModel {
     
     func fetch() {
