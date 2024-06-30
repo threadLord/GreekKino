@@ -17,6 +17,8 @@ struct PlayHolderView: View {
     var playHolderViewViewModel: PlayHolderViewViewModel
     
     
+//    let drawPlayView = DrawPlayView(draw: playHolderViewViewModel.drawModel)
+    
     init(draw: DrawModel) {
         self._playHolderViewViewModel = StateObject(wrappedValue: PlayHolderViewViewModel(draw: draw))
     }
@@ -39,8 +41,23 @@ struct PlayHolderView: View {
                 }
             }
             
+//            if playHolderViewViewModel.state == .drawPlay {
+//                DrawPlayView(draw: playHolderViewViewModel.drawModel)
+//            } else if playHolderViewViewModel.state == .dradLive {
+//                
+//                DrawLive()
+//            } else {
+//                EmptyView()
+//            }
+            
             DrawPlayView(draw: playHolderViewViewModel.drawModel)
                 .opacity(playHolderViewViewModel.state == .drawPlay ? 1.0 : 0.0)
+           
+            DrawLive()
+                .opacity(playHolderViewViewModel.state == .dradLive ? 1.0 : 0.0)
+            
+            
+            Spacer()
         }
     }
 }
