@@ -15,6 +15,8 @@ struct DrawPlayView: View {
     @StateObject
     var drawPlayViewModel: DrawPlayViewModel
     
+    
+    
     init(draw: DrawModel) {
         self._drawPlayViewModel = StateObject(wrappedValue: DrawPlayViewModel(draw: draw, networkManager: NetworkManager()))
         
