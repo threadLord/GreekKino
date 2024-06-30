@@ -9,6 +9,9 @@ import SwiftUI
 
 struct DrawScheduleView: View {
     
+    @EnvironmentObject
+    private var coordinator: MainCoordinator
+    
     @StateObject
     var drawScheduleViewModel: DrawScheduleViewModel = DrawScheduleViewModel(networkManager: NetworkManager(), adapter: ModelAdapter())
     
@@ -27,6 +30,9 @@ struct DrawScheduleView: View {
             VStack (spacing: 0){
                 ForEach(drawScheduleViewModel.drawScheduleData) { drawModel in
                     DrawScheduleCell(draw: drawModel)
+                        .onTapGesture {
+                            coordinator.push(.play(model: drawModel))
+                        }
                 }
             }
         }

@@ -20,7 +20,6 @@ struct DrawScheduleCell: View {
             Text(drawTime)
                 .padding()
             
-            
             Spacer()
             
             Text(timeLeft)
