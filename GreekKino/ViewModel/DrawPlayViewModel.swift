@@ -8,12 +8,6 @@
 import Foundation
 import Combine
 
-
-struct NumbersRow: Identifiable {
-    var id: Int
-    var numberModel: [NumberModel]
-}
-
 class DrawPlayViewModel: ObservableObject {
     
     @Published
@@ -30,7 +24,28 @@ class DrawPlayViewModel: ObservableObject {
     
     @Published
     var numbers: [NumbersRow] = []
-        
+    
+    var odds: [Odd] = [
+        Odd(odd: 3.5, number: 1),
+        Odd(odd: 14, number: 2),
+        Odd(odd: 65, number: 3),
+        Odd(odd: 275, number: 4),
+        Odd(odd: 1350, number: 5),
+        Odd(odd: 6500, number: 6),
+        Odd(odd: 25000, number: 7),
+        Odd(odd: 30000, number: 8),
+        Odd(odd: 40000, number: 9),
+        Odd(odd: 60000, number: 10),
+        Odd(odd: 80000, number: 11),
+        Odd(odd: 100000, number: 12),
+        Odd(odd: 120000, number: 13),
+        Odd(odd: 140000, number: 14),
+        Odd(odd: 150000, number: 15)
+    ]
+    
+    var selectedQuoteIndex: Int {
+        return odds.first { $0.isSelected }?.id ?? 1
+    }
     
     init(draw: DrawModel, networkManager: NetworkManagerProtocol) {
         self.draw = draw
@@ -91,7 +106,7 @@ class DrawPlayViewModel: ObservableObject {
     }
     
     func play() {
-        
+        //TODO: Send request by calling upload function
     }
     
     
@@ -119,6 +134,8 @@ class DrawPlayViewModel: ObservableObject {
             }
         }
         numbers = modifiedSelection
+        
+        toggleOddsSelection()
     }
     
     var getNumberOfSelected: Int {
@@ -146,6 +163,21 @@ class DrawPlayViewModel: ObservableObject {
             }
         }
         return outerArray
+    }
+    
+    func toggleOddsSelection() {
+        let numbersOfSelected = getNumberOfSelected
+        if numbersOfSelected == 0 {
+            odds = odds
+                .reduce([]) { partialResult, next in
+                partialResult + [Odd(odd: next.odd, number: next.number)]
+            }
+        } else {
+            odds = odds
+                .reduce([]) { partialResult, next in
+                     return partialResult + [Odd(odd: next.odd, number: next.number, isSelected: next.number == numbersOfSelected)]
+            }
+        }
     }
 }
 

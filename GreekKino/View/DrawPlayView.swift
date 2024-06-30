@@ -16,7 +16,7 @@ struct DrawPlayView: View {
     var drawPlayViewModel: DrawPlayViewModel
     
     init(draw: DrawModel) {
-        self._drawPlayViewModel = StateObject(wrappedValue: DrawPlayViewModel(draw: draw))
+        self._drawPlayViewModel = StateObject(wrappedValue: DrawPlayViewModel(draw: draw, networkManager: NetworkManager()))
         
     }
     
@@ -25,9 +25,47 @@ struct DrawPlayView: View {
         GeometryReader(content: { geometry in
             
             VStack {
-                Text(drawPlayViewModel.timeLeft)
                 
+                HStack {
+                    Text("Vreme: \(drawPlayViewModel.drawTime)")
+                    Text("| Kolo: \(drawPlayViewModel.draw.drawID)")
+                                        Spacer()
+                    Text(drawPlayViewModel.timeLeft)
+                    
+                    
+                }
+                .padding(8)
+              
                 
+                HStack {
+                    VStack {
+                        Text("B.K.")
+                        Text("Kvota")
+                            .padding(8)
+                    }
+                    
+                    ScrollViewReader(content: { proxy in
+                        ScrollView(.horizontal) {
+                            HStack {
+                                                               
+                                ForEach(drawPlayViewModel.odds) { odd in
+                                    VStack {
+                                        Text("\(odd.number)")
+                                        Text("\(odd.formatedOdd)")
+                                            .padding(8)
+                                            .background(
+                                                odd.isSelected ? Color.yellow.clipShape(Capsule()) : Color.black.clipShape(Capsule())
+                                            )
+                                    }
+                                    .id(odd.id)
+                                    .onChange(of: drawPlayViewModel.selectedQuoteIndex) {
+                                        proxy.scrollTo(drawPlayViewModel.selectedQuoteIndex)
+                                    }
+                                }
+                            }
+                        }
+                    })
+            }
                 Spacer()
                 
                 
@@ -39,11 +77,9 @@ struct DrawPlayView: View {
                                 drawPlayViewModel.choose(number: numberModel, row: numbersRow.id)
                             }, label: {
                                 Text("\(numberModel.number)")
-                                    .frame(maxWidth: .infinity)
+                                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                                     .background(
-                                        numberModel.isChoosen ? Color.yellow : Color.black
-//                                            .padding(.horizontal, 16)
-//                                            .frame(width: (geometry.size.width - 40) / 10, height: 30)
+                                        numberModel.isChoosen ? Color.yellow.clipShape(Circle()) : Color.black.clipShape(Circle())
                                     )
                             })
                             
